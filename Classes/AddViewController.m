@@ -98,7 +98,7 @@
 	
 	[menu addSubview:picker.view];
 	[menu showInView:self.view];
-	[menu setBounds:CGRectMake(0,0,320, 200)];
+	[menu setBounds:CGRectMake(0,0,320, 600)];
 	
 
 	[menu release];

@@ -8,6 +8,7 @@
 
 #import "PickerViewController.h"
 #import "RootViewController.h"
+#define EXTRA_COMPONENTS (10)
 
 @implementation PickerViewController
 
@@ -50,6 +51,15 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+	if(row < EXTRA_COMPONENTS) {
+		row += 100;
+		[pickerView selectRow:row inComponent:0 animated:NO];
+		return;
+	} else if(row >= 100 + EXTRA_COMPONENTS) {
+		row -= 100;
+		[pickerView selectRow:row inComponent:0 animated:NO];
+	return;}
+	
 	
 	secret = [[NSMutableString alloc] initWithString:@""];
 	switch (component) {
@@ -94,8 +104,9 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
 {
-	return [arrayNo count];
+	return 100 + EXTRA_COMPONENTS * 2; // Increase number of components by 10 per side
 }
+
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 {
