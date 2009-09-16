@@ -12,13 +12,6 @@
 
 @implementation AddViewController
 
--(PickerViewController *)picker {
-    if (picker == nil) {
-        picker = [[PickerViewController alloc] initWithNibName:@"PickerView" bundle:nil];
-    }
-    return picker;
-}
-
 
 // Implement viewDidLoad to do additional setup after loading the view.
 - (void)viewDidLoad {
@@ -95,11 +88,20 @@
 }
 -(void) showPicker:(id)sender {
 		// Add the picker
+	UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:@"test"
+													  delegate:self
+											 cancelButtonTitle:@"Done"
+										destructiveButtonTitle:@"Cancel"
+											 otherButtonTitles:nil];
+	if(picker == nil)
+		picker = [[PickerViewController alloc] initWithNibName:@"PickerView" bundle:nil];
 	
+	[menu addSubview:picker.view];
+	[menu showInView:self.view];
+	[menu setBounds:CGRectMake(0,0,320, 200)];
 	
-[self.navigationController pushViewController:picker animated:YES];
-		
-	[picker release];
+
+	[menu release];
 	
 }
 - (void)dealloc {

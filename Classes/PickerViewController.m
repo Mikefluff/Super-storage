@@ -18,9 +18,9 @@
 //[rvController doneSearching_Clicked:nil];
 }
 
-- (void)awakeFromNib
-{
-	[super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+	
+	[super viewWillAppear:YES];
 	arrayNo = [[NSMutableArray alloc] init];
 	[arrayNo addObject:@"1"];
 	[arrayNo addObject:@"2"];
@@ -91,6 +91,18 @@
 	
 	//	}
 }
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+{
+	return [arrayNo count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+{
+	return [arrayNo objectAtIndex:row];
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {

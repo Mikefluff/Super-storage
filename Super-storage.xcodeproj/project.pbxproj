@@ -39,28 +39,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 49CE45B1105E70480001F1F6 /* openssl.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9069D28C0FCE659A0042E34C /* libcrypto.a */;
+			remoteGlobalIDString = 9069D28C0FCE659A0042E34C;
 			remoteInfo = crypto;
 		};
 		49CE45BD105E70500001F1F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC046055464E500DB518D /* libsqlcipher.a */;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
 			remoteInfo = sqlcipher;
 		};
 		49CE45E8105F8F5E0001F1F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D /* sqlcipher */;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
 			remoteInfo = sqlcipher;
 		};
 		49CE45EA105F8F620001F1F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49CE45B1105E70480001F1F6 /* openssl.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9069D28B0FCE659A0042E34C /* crypto */;
+			remoteGlobalIDString = 9069D28B0FCE659A0042E34C;
 			remoteInfo = crypto;
 		};
 /* End PBXContainerItemProxy section */

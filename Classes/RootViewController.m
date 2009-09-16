@@ -8,7 +8,7 @@
 
 #import "RootViewController.h"
 #import "Users.h";
-#import "PickerViewController.h"
+#import "AddViewController.h"
 #import "DetailViewController.h"
 
 @implementation RootViewController
@@ -139,12 +139,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void) add_Clicked:(id)sender {
 	
 	if(avController == nil)
-		avController = [[PickerViewController alloc] initWithNibName:@"PickerView" bundle:nil];
+		avController = [[AddViewController alloc] initWithNibName:@"AddView" bundle:nil];
 	
 	if(addNavigationController == nil)
 		addNavigationController = [[UINavigationController alloc] initWithRootViewController:avController];
 	
-	[self.navigationController presentModalViewController:addNavigationController animated:YES];
+	[self.navigationController presentModalViewController:addNavigationController animated:NO];
 }
 
 //reimplement cell

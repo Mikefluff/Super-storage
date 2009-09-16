@@ -29,7 +29,7 @@
 	
 	txtField.text = self.editValue;
 	
-	[txtField becomeFirstResponder];
+//	[txtField becomeFirstResponder];
 }
 
 

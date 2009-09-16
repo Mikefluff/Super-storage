@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class Users, AddViewController, DetailViewController, PickerViewController;
+@class Users, AddViewController, DetailViewController;
 
 @interface RootViewController : UITableViewController {
 	
 	Super_storageAppDelegate *appDelegate;
-	PickerViewController *avController;
+	AddViewController *avController;
 	DetailViewController *dvController;
 	UINavigationController *addNavigationController;
 	BOOL edit;
