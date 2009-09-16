@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* Super_storageAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Super_storageAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		49CE44F4105E42B00001F1F6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE44F3105E42B00001F1F6 /* MainWindow.xib */; };
+		49CE44FA105E42F20001F1F6 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE44F9105E42F20001F1F6 /* RootViewController.xib */; };
+		49CE44FD105E43030001F1F6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE44FC105E43030001F1F6 /* RootViewController.m */; };
+		49CE451A105E450A0001F1F6 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE4519105E450A0001F1F6 /* Users.m */; };
+		49CE4524105E61790001F1F6 /* AddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE4523105E61790001F1F6 /* AddView.xib */; };
+		49CE4526105E61810001F1F6 /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE4525105E61810001F1F6 /* EditView.xib */; };
+		49CE452A105E61AA0001F1F6 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE4529105E61AA0001F1F6 /* AddViewController.m */; };
+		49CE4576105E643E0001F1F6 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CE4575105E643E0001F1F6 /* libsqlite3.0.dylib */; };
+		49CE459B105E6CAC0001F1F6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE459A105E6CAC0001F1F6 /* DetailViewController.m */; };
+		49CE45A5105E6D530001F1F6 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE45A4105E6D530001F1F6 /* EditViewController.m */; };
+		49CE4690105F91080001F1F6 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE468F105F91080001F1F6 /* DetailView.xib */; };
+		49CE47D7105FB17B0001F1F6 /* tableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE47D6105FB17B0001F1F6 /* tableView.xib */; };
+		49CE47DA105FB1840001F1F6 /* tableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE47D9105FB1840001F1F6 /* tableViewController.m */; };
+		49CE47DD105FB2BB0001F1F6 /* txtEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE47DC105FB2BB0001F1F6 /* txtEditViewController.m */; };
+		49CE47E0105FB2D30001F1F6 /* md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE47DF105FB2D30001F1F6 /* md5.m */; };
+		49CE47E3105FB5C40001F1F6 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE47E1105FB5C40001F1F6 /* PickerViewController.m */; };
+		49CE47E5105FB5E60001F1F6 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE47E4105FB5E60001F1F6 /* PickerView.xib */; };
+		49CE4836105FBCFC0001F1F6 /* txtEditAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE4835105FBCFC0001F1F6 /* txtEditAppDelegate.m */; };
+		49CE4839105FBD080001F1F6 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE4838105FBD080001F1F6 /* Record.m */; };
+		49CE483D105FBD210001F1F6 /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE483B105FBD200001F1F6 /* OverlayViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49CE45B6105E70480001F1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49CE45B1105E70480001F1F6 /* openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9069D28C0FCE659A0042E34C /* libcrypto.a */;
+			remoteInfo = crypto;
+		};
+		49CE45BD105E70500001F1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D /* libsqlcipher.a */;
+			remoteInfo = sqlcipher;
+		};
+		49CE45E8105F8F5E0001F1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D /* sqlcipher */;
+			remoteInfo = sqlcipher;
+		};
+		49CE45EA105F8F620001F1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49CE45B1105E70480001F1F6 /* openssl.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9069D28B0FCE659A0042E34C /* crypto */;
+			remoteInfo = crypto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* Super_storageAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Super_storageAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* Super_storageAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Super_storageAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Super-storage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Super-storage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Super_storage_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Super_storage_Prefix.pch; sourceTree = "<group>"; };
+		49CE44F3105E42B00001F1F6 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		49CE44F9105E42F20001F1F6 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		49CE44FB105E43030001F1F6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		49CE44FC105E43030001F1F6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		49CE4518105E450A0001F1F6 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
+		49CE4519105E450A0001F1F6 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		49CE4523105E61790001F1F6 /* AddView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddView.xib; sourceTree = "<group>"; };
+		49CE4525105E61810001F1F6 /* EditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditView.xib; path = ../../../Downloads/SQL/EditView.xib; sourceTree = SOURCE_ROOT; };
+		49CE4528105E61AA0001F1F6 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		49CE4529105E61AA0001F1F6 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		49CE4575105E643E0001F1F6 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		49CE4599105E6CAC0001F1F6 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		49CE459A105E6CAC0001F1F6 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		49CE45A3105E6D530001F1F6 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		49CE45A4105E6D530001F1F6 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		49CE45B1105E70480001F1F6 /* openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openssl.xcodeproj; path = "../../openssl-0.9.8k/openssl.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlcipher.xcodeproj; path = ../../SQLCipher/sqlcipher/sqlcipher.xcodeproj; sourceTree = SOURCE_ROOT; };
+		49CE468F105F91080001F1F6 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		49CE47D6105FB17B0001F1F6 /* tableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tableView.xib; sourceTree = "<group>"; };
+		49CE47D8105FB1840001F1F6 /* tableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableViewController.h; sourceTree = "<group>"; };
+		49CE47D9105FB1840001F1F6 /* tableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableViewController.m; sourceTree = "<group>"; };
+		49CE47DB105FB2BB0001F1F6 /* txtEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = txtEditViewController.h; sourceTree = "<group>"; };
+		49CE47DC105FB2BB0001F1F6 /* txtEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = txtEditViewController.m; sourceTree = "<group>"; };
+		49CE47DE105FB2D30001F1F6 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		49CE47DF105FB2D30001F1F6 /* md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = md5.m; sourceTree = "<group>"; };
+		49CE47E1105FB5C40001F1F6 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		49CE47E2105FB5C40001F1F6 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		49CE47E4105FB5E60001F1F6 /* PickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
+		49CE4834105FBCFC0001F1F6 /* txtEditAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = txtEditAppDelegate.h; sourceTree = "<group>"; };
+		49CE4835105FBCFC0001F1F6 /* txtEditAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = txtEditAppDelegate.m; sourceTree = "<group>"; };
+		49CE4837105FBD070001F1F6 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		49CE4838105FBD080001F1F6 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		49CE483B105FBD200001F1F6 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
+		49CE483C105FBD210001F1F6 /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Super_storage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Super_storage-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				49CE4576105E643E0001F1F6 /* libsqlite3.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				49CE483B105FBD200001F1F6 /* OverlayViewController.m */,
+				49CE483C105FBD210001F1F6 /* OverlayViewController.h */,
+				49CE4837105FBD070001F1F6 /* Record.h */,
+				49CE4838105FBD080001F1F6 /* Record.m */,
+				49CE4834105FBCFC0001F1F6 /* txtEditAppDelegate.h */,
+				49CE4835105FBCFC0001F1F6 /* txtEditAppDelegate.m */,
+				49CE47E1105FB5C40001F1F6 /* PickerViewController.m */,
+				49CE47E2105FB5C40001F1F6 /* PickerViewController.h */,
+				49CE47DE105FB2D30001F1F6 /* md5.h */,
+				49CE47DF105FB2D30001F1F6 /* md5.m */,
+				49CE47DB105FB2BB0001F1F6 /* txtEditViewController.h */,
+				49CE47DC105FB2BB0001F1F6 /* txtEditViewController.m */,
+				49CE47D8105FB1840001F1F6 /* tableViewController.h */,
+				49CE47D9105FB1840001F1F6 /* tableViewController.m */,
+				49CE45A3105E6D530001F1F6 /* EditViewController.h */,
+				49CE45A4105E6D530001F1F6 /* EditViewController.m */,
+				49CE4599105E6CAC0001F1F6 /* DetailViewController.h */,
+				49CE459A105E6CAC0001F1F6 /* DetailViewController.m */,
+				49CE4528105E61AA0001F1F6 /* AddViewController.h */,
+				49CE4529105E61AA0001F1F6 /* AddViewController.m */,
+				49CE44FB105E43030001F1F6 /* RootViewController.h */,
+				49CE44FC105E43030001F1F6 /* RootViewController.m */,
+				1D3623240D0F684500981E51 /* Super_storageAppDelegate.h */,
+				1D3623250D0F684500981E51 /* Super_storageAppDelegate.m */,
+				49CE4518105E450A0001F1F6 /* Users.h */,
+				49CE4519105E450A0001F1F6 /* Users.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Super-storage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Super_storage_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49CE47E4105FB5E60001F1F6 /* PickerView.xib */,
+				49CE47D6105FB17B0001F1F6 /* tableView.xib */,
+				49CE468F105F91080001F1F6 /* DetailView.xib */,
+				49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */,
+				49CE45B1105E70480001F1F6 /* openssl.xcodeproj */,
+				49CE4525105E61810001F1F6 /* EditView.xib */,
+				49CE4523105E61790001F1F6 /* AddView.xib */,
+				49CE44F9105E42F20001F1F6 /* RootViewController.xib */,
+				49CE44F3105E42B00001F1F6 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Super_storage-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49CE4575105E643E0001F1F6 /* libsqlite3.0.dylib */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49CE45B2105E70480001F1F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49CE45B7105E70480001F1F6 /* libcrypto.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49CE45B9105E70500001F1F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49CE45BE105E70500001F1F6 /* libsqlcipher.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Super-storage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Super-storage" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49CE45EB105F8F620001F1F6 /* PBXTargetDependency */,
+				49CE45E9105F8F5E0001F1F6 /* PBXTargetDependency */,
+			);
+			name = "Super-storage";
+			productName = "Super-storage";
+			productReference = 1D6058910D05DD3D006BFB54 /* Super-storage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Super-storage" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 49CE45B2105E70480001F1F6 /* Products */;
+					ProjectRef = 49CE45B1105E70480001F1F6 /* openssl.xcodeproj */;
+				},
+				{
+					ProductGroup = 49CE45B9105E70500001F1F6 /* Products */;
+					ProjectRef = 49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Super-storage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		49CE45B7105E70480001F1F6 /* libcrypto.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcrypto.a;
+			remoteRef = 49CE45B6105E70480001F1F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		49CE45BE105E70500001F1F6 /* libsqlcipher.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsqlcipher.a;
+			remoteRef = 49CE45BD105E70500001F1F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CE44F4105E42B00001F1F6 /* MainWindow.xib in Resources */,
+				49CE44FA105E42F20001F1F6 /* RootViewController.xib in Resources */,
+				49CE4524105E61790001F1F6 /* AddView.xib in Resources */,
+				49CE4526105E61810001F1F6 /* EditView.xib in Resources */,
+				49CE4690105F91080001F1F6 /* DetailView.xib in Resources */,
+				49CE47D7105FB17B0001F1F6 /* tableView.xib in Resources */,
+				49CE47E5105FB5E60001F1F6 /* PickerView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* Super_storageAppDelegate.m in Sources */,
+				49CE44FD105E43030001F1F6 /* RootViewController.m in Sources */,
+				49CE451A105E450A0001F1F6 /* Users.m in Sources */,
+				49CE452A105E61AA0001F1F6 /* AddViewController.m in Sources */,
+				49CE459B105E6CAC0001F1F6 /* DetailViewController.m in Sources */,
+				49CE45A5105E6D530001F1F6 /* EditViewController.m in Sources */,
+				49CE47DA105FB1840001F1F6 /* tableViewController.m in Sources */,
+				49CE47DD105FB2BB0001F1F6 /* txtEditViewController.m in Sources */,
+				49CE47E0105FB2D30001F1F6 /* md5.m in Sources */,
+				49CE47E3105FB5C40001F1F6 /* PickerViewController.m in Sources */,
+				49CE4836105FBCFC0001F1F6 /* txtEditAppDelegate.m in Sources */,
+				49CE4839105FBD080001F1F6 /* Record.m in Sources */,
+				49CE483D105FBD210001F1F6 /* OverlayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49CE45E9105F8F5E0001F1F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sqlcipher;
+			targetProxy = 49CE45E8105F8F5E0001F1F6 /* PBXContainerItemProxy */;
+		};
+		49CE45EB105F8F620001F1F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = crypto;
+			targetProxy = 49CE45EA105F8F620001F1F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Super_storage_Prefix.pch;
+				INFOPLIST_FILE = "Super_storage-Info.plist";
+				PRODUCT_NAME = "Super-storage";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Super_storage_Prefix.pch;
+				INFOPLIST_FILE = "Super_storage-Info.plist";
+				PRODUCT_NAME = "Super-storage";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Super-storage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Super-storage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
