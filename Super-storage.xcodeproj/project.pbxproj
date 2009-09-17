@@ -12,6 +12,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		49A53A0B10624A2200774C6A /* UIImage-Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A53A0A10624A2200774C6A /* UIImage-Blur.m */; };
+		49A53A0E10624AF800774C6A /* UIView-GetImageOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A53A0D10624AF800774C6A /* UIView-GetImageOf.m */; };
 		49CE44F4105E42B00001F1F6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE44F3105E42B00001F1F6 /* MainWindow.xib */; };
 		49CE44FA105E42F20001F1F6 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE44F9105E42F20001F1F6 /* RootViewController.xib */; };
 		49CE44FD105E43030001F1F6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE44FC105E43030001F1F6 /* RootViewController.m */; };
@@ -74,6 +76,10 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Super_storage_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Super_storage_Prefix.pch; sourceTree = "<group>"; };
+		49A53A0910624A2200774C6A /* UIImage-Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Blur.h"; sourceTree = "<group>"; };
+		49A53A0A10624A2200774C6A /* UIImage-Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Blur.m"; sourceTree = "<group>"; };
+		49A53A0C10624AF800774C6A /* UIView-GetImageOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-GetImageOf.h"; sourceTree = "<group>"; };
+		49A53A0D10624AF800774C6A /* UIView-GetImageOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-GetImageOf.m"; sourceTree = "<group>"; };
 		49CE44F3105E42B00001F1F6 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		49CE44F9105E42F20001F1F6 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		49CE44FB105E43030001F1F6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -129,6 +135,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				49A53A0C10624AF800774C6A /* UIView-GetImageOf.h */,
+				49A53A0D10624AF800774C6A /* UIView-GetImageOf.m */,
+				49A53A0910624A2200774C6A /* UIImage-Blur.h */,
+				49A53A0A10624A2200774C6A /* UIImage-Blur.m */,
 				49CE483B105FBD200001F1F6 /* OverlayViewController.m */,
 				49CE483C105FBD210001F1F6 /* OverlayViewController.h */,
 				49CE4837105FBD070001F1F6 /* Record.h */,
@@ -334,6 +344,8 @@
 				49CE4836105FBCFC0001F1F6 /* txtEditAppDelegate.m in Sources */,
 				49CE4839105FBD080001F1F6 /* Record.m in Sources */,
 				49CE483D105FBD210001F1F6 /* OverlayViewController.m in Sources */,
+				49A53A0B10624A2200774C6A /* UIImage-Blur.m in Sources */,
+				49A53A0E10624AF800774C6A /* UIView-GetImageOf.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
