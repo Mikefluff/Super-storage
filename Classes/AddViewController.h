@@ -15,6 +15,13 @@
 	IBOutlet UITextField *txtUserName;
 	IBOutlet UITextField *txtPassword;
 	PickerViewController *picker;
+	AddViewController *_controlView;
+	
+	
+//temp variables
+	UISegmentedControl *_compressionSegControl;
+	UISegmentedControl *_mipmapSegControl;
+	UISegmentedControl *_filterControl;
 }
 
 -(void) showPicker:(id)sender;

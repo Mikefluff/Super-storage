@@ -12,10 +12,15 @@
 #define kAccelerationThreshold		2.2
 #define kUpdateInterval				(1.0f/10.0f)
 
-@interface PickerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIAccelerometerDelegate>
+@interface PickerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIAccelerometerDelegate, UIActionSheetDelegate>
 {
 	UIPickerView	*picker;
 	UIButton		*spinButton;
+	IBOutlet UILabel *mlabel6;
+	
+	
+	NSMutableArray *code;
+	NSMutableString *secret;
 	
 	NSArray			*component1Data;
 	NSArray			*component2Data;
@@ -48,6 +53,7 @@
 	NSUInteger		spin6;
 	
 }
+@property (nonatomic, retain) UILabel *mlabel6;
 @property (nonatomic, retain) IBOutlet UIPickerView *picker;
 @property (nonatomic, retain) IBOutlet UIButton *spinButton;
 @property (nonatomic, retain) NSArray *component1Data;

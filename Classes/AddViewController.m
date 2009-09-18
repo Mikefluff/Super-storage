@@ -28,6 +28,12 @@
 											   target:self action:@selector(save_Clicked:)] autorelease];
 	
 	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	
+	//control form
+	
+	
+	
+	
  }
 
 
@@ -69,7 +75,8 @@
 	[appDelegate addUser:userObj];
 	
 	//Dismiss the controller.
-	[self.navigationController dismissModalViewControllerAnimated:YES];
+	[picker.view removeFromSuperview];
+ 	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (void) cancel_Clicked:(id)sender {
@@ -88,20 +95,13 @@
 }
 -(void) showPicker:(id)sender {
 		// Add the picker
-	UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:@"test"
-													  delegate:self
-											 cancelButtonTitle:@"Done"
-										destructiveButtonTitle:@"Cancel"
-											 otherButtonTitles:nil];
+	
+	[txtUserName resignFirstResponder];
 	if(picker == nil)
 		picker = [[PickerViewController alloc] initWithNibName:@"PickerView" bundle:nil];
+	[self.view addSubview:picker.view];
+	[UIView commitAnimations];
 	
-	[menu addSubview:picker.view];
-	[menu showInView:self.view];
-	[menu setBounds:CGRectMake(0,0,320, 600)];
-	
-
-	[menu release];
 	
 }
 - (void)dealloc {

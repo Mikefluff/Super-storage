@@ -19,6 +19,7 @@
 @end
 
 @implementation PickerViewController
+@synthesize mlabel6;
 @synthesize picker;
 @synthesize spinButton;
 @synthesize component1Data;
@@ -75,7 +76,7 @@
 		isSpinning = YES;
 		
 		// Need to have it stop blurring a fraction of a second before it stops spinning so that the final appearance is not blurred.
-		[self performSelector:@selector(stopBlurring) withObject:nil afterDelay:4.7];
+		[self performSelector:@selector(stopBlurring) withObject:nil afterDelay:0.7];
 	}
 }
 - (NSArray *)arrayForComponent:(NSInteger)index
@@ -134,12 +135,12 @@
 	[picker setSoundsEnabled:NO];
 	
 	// Dummy data to display
-	self.component1Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
-	self.component2Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
-	self.component3Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
-	self.component4Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
-	self.component5Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
-	self.component6Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", nil];
+	self.component1Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", nil];
+	self.component2Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", nil];
+	self.component3Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", nil];
+	self.component4Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", nil];
+	self.component5Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", nil];
+	self.component6Data = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", nil];
 	
 	// Create UILabels out of them
 	self.component1Labels = [self labelArrayFromStringArray:component1Data];
@@ -165,6 +166,16 @@
 	[picker selectRow: [component6Data count] * (kRowMultiplier / 2) inComponent:5 animated:NO];
 	
 	[self performSelector:@selector(_reenablePickerSound) withObject:nil afterDelay:0.25];
+	
+	code = [[NSMutableArray alloc] init];
+	[code addObject:@"1"];
+	[code addObject:@"1"];
+	[code addObject:@"1"];
+	[code addObject:@"1"];
+	[code addObject:@"1"];
+	[code addObject:@"1"];
+	secret = [NSMutableString stringWithCapacity:6];
+	
 	
     [super viewDidLoad];
 }
@@ -206,7 +217,11 @@
 	}
 	
 	NSArray *componentArray = [self blurredArrayForComponent:component];
+	
+	[picker selectRow: actualRow inComponent:component animated:NO];
 	return [componentArray objectAtIndex:actualRow];
+	
+	
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
@@ -215,6 +230,17 @@
 	
 	int newRow = ([componentArray count] * (kRowMultiplier / 2)) + actualRow;
 	[picker selectRow:newRow inComponent:component animated:NO];
+	
+	secret = [[NSMutableString alloc] initWithString:@""];
+
+	//NSInteger test = [pickerView selectedRowInComponent:0]%[componentArray count];	
+	for (int i=0;i<6;i++)
+	{
+		NSArray *componentArray = [self arrayForComponent:i];
+		[secret appendString:[component1Data objectAtIndex:[pickerView selectedRowInComponent:i]%[componentArray count]]];
+	}
+	mlabel6.text = secret;
+	
 	
 }
 #pragma mark -
@@ -234,4 +260,29 @@
 	if (fabsf(acceleration.x) > kAccelerationThreshold || fabsf(acceleration.y) > kAccelerationThreshold || fabsf(acceleration.z) > kAccelerationThreshold) 
 		[self spin];	
 }
+
+
+#pragma mark -
+#pragma mark UIActionSheet Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	// the user clicked one of the OK/Cancel buttons
+	if (buttonIndex == 0)
+	{
+		NSLog(@"ok");
+	}
+	if (!(buttonIndex == [actionSheet cancelButtonIndex])) {
+		NSString *msg = nil;
+		
+	//	if (nameField.text.length > 0)
+	//		msg = [[NSString alloc] initWithFormat:
+	//			   @"You can breathe easy, %@, everything went OK.",
+	//			   nameField.text];
+	//	else
+		[self spin];
+	}
+}
+
+
 @end
