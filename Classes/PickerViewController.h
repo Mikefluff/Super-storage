@@ -74,6 +74,7 @@
 @property (nonatomic, retain) NSArray *component4BlurredLabels;
 @property (nonatomic, retain) NSArray *component5BlurredLabels;
 @property (nonatomic, retain) NSArray *component6BlurredLabels;
+@property (nonatomic, retain) NSMutableString *secret;
 - (IBAction)spin;
 - (NSArray *)blurredLabelArrayFromLabelArray:(NSArray *)labelArray;
 - (NSArray *)labelArrayFromStringArray:(NSArray *)stringArray;

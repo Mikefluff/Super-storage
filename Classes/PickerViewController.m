@@ -20,6 +20,7 @@
 
 @implementation PickerViewController
 @synthesize mlabel6;
+@synthesize secret;
 @synthesize picker;
 @synthesize spinButton;
 @synthesize component1Data;
@@ -183,6 +184,7 @@
 - (void)dealloc 
 {
 	[picker release];
+	[secret release];
 	[spinButton release];
 	[component1Data release];
 	[component2Data release];

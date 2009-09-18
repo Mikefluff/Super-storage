@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 #import "Users.h"
 #import "PickerViewController.h"
+#import "md5.h"
 
 @implementation AddViewController
 
@@ -63,11 +64,10 @@
 - (void) save_Clicked:(id)sender {
 	
 	Super_storageAppDelegate *appDelegate = (Super_storageAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
 	//Create a Coffee Object.
 	Users *userObj = [[Users alloc] initWithPrimaryKey:0];
 	userObj.userName = txtUserName.text;
-	userObj.password = txtPassword.text;
+	userObj.password = [picker.secret md5sum];
 	userObj.isDirty = NO;
 	userObj.isDetailViewHydrated = YES;
 	
@@ -95,13 +95,22 @@
 }
 -(void) showPicker:(id)sender {
 		// Add the picker
-	
+	if (txtUserName.text.length != nil)
+	{
 	[txtUserName resignFirstResponder];
 	if(picker == nil)
 		picker = [[PickerViewController alloc] initWithNibName:@"PickerView" bundle:nil];
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:1];
+	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
 	[self.view addSubview:picker.view];
 	[UIView commitAnimations];
-	
+	}
+	else {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Enter Username!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok",nil];
+		[alert show];
+	}
+		
 	
 }
 - (void)dealloc {

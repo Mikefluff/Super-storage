@@ -283,7 +283,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 449}, {186, 690}}</string>
+							<string>{{0, 84}, {186, 690}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -320,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PickerViewController.m</string>
+								<string>AddViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PickerViewController.m</string>
+										<string>AddViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49A53CC610639D5000774C6A</string>
+										<string>49A53D6D1063CE5400774C6A</string>
 										<key>history</key>
 										<array>
 											<string>49CE45EF105F8F780001F1F6</string>
@@ -364,10 +364,10 @@
 											<string>49A53B771063895400774C6A</string>
 											<string>49A53B781063895400774C6A</string>
 											<string>49A53B791063895400774C6A</string>
-											<string>49A53BCA10638E1000774C6A</string>
 											<string>49A53C621063975E00774C6A</string>
-											<string>49A53C8F1063993000774C6A</string>
-											<string>49A53C901063993000774C6A</string>
+											<string>49A53CE51063C84B00774C6A</string>
+											<string>49A53CE61063C84B00774C6A</string>
+											<string>49A53CE71063C84B00774C6A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -471,6 +471,22 @@
 											<string>49A53C681063975E00774C6A</string>
 											<string>49A53C911063993000774C6A</string>
 											<string>49A53C921063993000774C6A</string>
+											<string>49A53CCB1063B28900774C6A</string>
+											<string>49A53CE81063C84B00774C6A</string>
+											<string>49A53CE91063C84B00774C6A</string>
+											<string>49A53CEA1063C84B00774C6A</string>
+											<string>49A53CEB1063C84B00774C6A</string>
+											<string>49A53CEC1063C84B00774C6A</string>
+											<string>49A53CED1063C84B00774C6A</string>
+											<string>49A53CEE1063C84B00774C6A</string>
+											<string>49A53CEF1063C84B00774C6A</string>
+											<string>49A53CF01063C84B00774C6A</string>
+											<string>49A53CF11063C84B00774C6A</string>
+											<string>49A53CF21063C84B00774C6A</string>
+											<string>49A53CF31063C84B00774C6A</string>
+											<string>49A53CF41063C84B00774C6A</string>
+											<string>49A53CF51063C84B00774C6A</string>
+											<string>49A53CF61063C84B00774C6A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -664,7 +680,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>49A53CC710639D5000774C6A</string>
 		<string>49A53A9310625E0600774C6A</string>
 		<string>49A53A9410625E0600774C6A</string>
 		<string>1C78EAAD065D492600B07095</string>
