@@ -18,12 +18,14 @@
 	
 	//To hold a list of Coffee objects
 	NSMutableArray *usersArray;
+	NSMutableArray *records;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
 @property (nonatomic, retain) NSMutableArray *usersArray;
+@property (nonatomic, retain) NSMutableArray *records;
 
 - (void) createDatabaseIfNeeded;
 - (NSString *) getDBPath;

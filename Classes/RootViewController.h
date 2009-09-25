@@ -8,15 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@class Users, AddViewController, DetailViewController;
+@class Users, AddViewController, DetailViewController, PickerViewController;
 
-@interface RootViewController : UITableViewController {
+@interface RootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
 	
 	Super_storageAppDelegate *appDelegate;
+	IBOutlet UITableView *tableView;
 	AddViewController *avController;
 	DetailViewController *dvController;
+	PickerViewController *picker;
 	UINavigationController *addNavigationController;
 	BOOL edit;
 }
+
+@property (nonatomic, retain) UITableView *tableView;
 - (UITableViewCell *) getCellContentView:(NSString *)cellIdentifier;
+- (void)button:(id)sender;
+- (void)button2:(id)sender;
 @end

@@ -9,12 +9,16 @@
 #import "Super_storageAppDelegate.h"
 #import "RootViewController.h"
 #import "Users.h"
+#import "md5.h"
+#import <sqlite3.h>
+
 static sqlite3 *database = nil;
 @implementation Super_storageAppDelegate
 
 @synthesize window;
 @synthesize navigationController;
 @synthesize usersArray;
+@synthesize records;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
@@ -24,12 +28,15 @@ static sqlite3 *database = nil;
 	
 	//Initialize the coffee array.
 	NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+	NSMutableArray *tempArray1 = [[NSMutableArray alloc] init];
 	self.usersArray = tempArray;
-	[tempArray release];
+	self.records = tempArray1;
 	
+	[tempArray release];
+	[tempArray1 release];
 	//Once the db is copied, get the initial data to display on the screen.
 	[Users getInitialDataToDisplay:[self getDBPath]];
-	
+	[[UIApplication sharedApplication] setStatusBarHidden:YES animated:YES];
 	// Configure and show the window
 	[window addSubview:[navigationController view]];
 	[window makeKeyAndVisible];
@@ -60,15 +67,14 @@ static sqlite3 *database = nil;
 
 -(void)createDatabaseIfNeeded {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSError *error;
 	NSString *dbPath = [self getDBPath];
 	BOOL success = [fileManager fileExistsAtPath:dbPath]; 
     NSString *res;
     
-	NSString *hash;
+	NSString *hash = [[NSString alloc] initWithString:@"PRAGMA KEY = '"];
 	UIDevice *myDevice = [UIDevice currentDevice];
-	hash = [myDevice uniqueIdentifier];
-	// Если целевой файл уже существует, то не затираем его и выходим из метода
+	hash = [[hash stringByAppendingString:[[myDevice uniqueIdentifier] md5sum]] stringByAppendingString:@"'"];
+		// Если целевой файл уже существует, то не затираем его и выходим из метода
     success = [fileManager fileExistsAtPath:dbPath];
     if (success) return;
     else {
@@ -81,9 +87,7 @@ static sqlite3 *database = nil;
 		}}
 	}
 	sqlite3_close(database);
-    if (!success) {
-        NSAssert1(NO, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
-    }
+    
 }
 
 - (NSString *) getDBPath {

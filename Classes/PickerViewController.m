@@ -9,6 +9,10 @@
 #import "PickerViewController.h"
 #import "UIView-GetImageOf.h"
 #import "UIImage-Blur.h"
+#import "tableViewController.h"
+#import "RootViewController.h"
+#import "tableDataDelegate.h"
+#import "md5.h"
 
 @interface UIPickerView(SoundsEnabledPrivate)
 - (void)setSoundsEnabled:(BOOL)isEnabled;
@@ -41,6 +45,19 @@
 @synthesize component4BlurredLabels;
 @synthesize component5BlurredLabels;
 @synthesize component6BlurredLabels;
+@synthesize username;
+@synthesize password;
+
+-(void)viewWillAppear:(BOOL)animated {
+UIBarButtonItem *buttonDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+																			target:self
+																			action:@selector(doneAction:)];
+self.navigationItem.rightBarButtonItem = buttonDone;
+[buttonDone release];
+	secret = [[NSString alloc] initWithString:@"111111"];
+self.navigationItem.title = @"Enter password";
+}
+
 
 - (void)stopBlurring
 {
@@ -127,7 +144,7 @@
 #pragma mark -
 - (void)viewDidLoad 
 {	
-	
+		
 	UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
 	accel.delegate = self;
 	accel.updateInterval = kUpdateInterval;
@@ -180,6 +197,37 @@
 	
     [super viewDidLoad];
 }
+
+
+//кнопка Login
+-(void)doneAction:(id)sender {
+       
+    self.navigationItem.rightBarButtonItem = nil;
+
+//	[self.navigationController dismissModalViewControllerAnimated:YES];
+	
+	if(tableView == nil)
+		tableView = [[tableViewController alloc] initWithNibName:@"tableView" bundle:nil];
+	tableDataDelegate *tableData = [tableDataDelegate alloc];
+	tableData.db = username;
+	if([[secret md5sum] isEqualToString:password]) {
+		tableData.hash = [secret md5sum];
+		[tableData initializeDatabase];
+				
+		[self.navigationController pushViewController:tableView animated:YES];
+	}
+	else {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Invalid Password!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok",nil];
+		[alert show];
+		[alert release];
+		[self.navigationController loadView];
+ 	}
+	
+		
+}
+
+
+
 
 - (void)dealloc 
 {
@@ -241,7 +289,7 @@
 		NSArray *componentArray = [self arrayForComponent:i];
 		[secret appendString:[component1Data objectAtIndex:[pickerView selectedRowInComponent:i]%[componentArray count]]];
 	}
-	mlabel6.text = secret;
+	mlabel6.text = username;
 	
 	
 }

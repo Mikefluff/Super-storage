@@ -10,29 +10,30 @@
 #import <sqlite3.h>
 
 @interface Record : NSObject {
-    sqlite3 *database;
-    
+        
     NSInteger primaryKey;
     NSString *title;
     NSString *txt;
 	UIImage *image;
-	NSString *username;
-	NSString *password;
+
 	BOOL type;
+	BOOL isDirty;
+	BOOL isDetailViewHydrated;
 }
 
 @property (assign, nonatomic, readonly) NSInteger primaryKey;
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *txt;
-@property (copy, nonatomic) NSString *username;
-@property (copy, nonatomic) NSString *password;
+
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readwrite) BOOL isDirty;
+@property (nonatomic, readwrite) BOOL isDetailViewHydrated;
 
 +(void)finalizeStatements;
--(id)initWithIdentifier:(NSInteger)idKey database:(sqlite3 *)db;
++ (void) getInitialDataToDisplay:(NSString *)dbPath hash:(NSString *)hash;
 -(void)readRecord;
 -(void)updateRecord;
 -(void)deleteRecord;
--(void)insertIntoDatabase:(sqlite3 *)db;
-
+-(void)insertIntoDatabase;
+- (id) initWithPrimaryKey:(NSInteger)pk;
 @end

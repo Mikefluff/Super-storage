@@ -10,8 +10,11 @@
 #import "Users.h";
 #import "AddViewController.h"
 #import "DetailViewController.h"
+#import "PickerViewController.h"
 
 @implementation RootViewController
+
+@synthesize tableView;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -55,26 +58,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic -- create and push a new view controller
-	if(edit) {
-	if(dvController == nil) 
-		dvController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
+//	if(edit) {
+//	if(dvController == nil) 
+//		dvController = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
 	
-	Users *userObj = [appDelegate.usersArray objectAtIndex:indexPath.row];
+//	Users *userObj = [appDelegate.usersArray objectAtIndex:indexPath.row];
 	
 	//Get the detail view data if it does not exists.
 	//We only load the data we initially want and keep on loading as we need.
+//	[userObj hydrateDetailViewData];
+	
+//	dvController.userObj = userObj;
+	
+//	[self.navigationController pushViewController:dvController animated:YES];
+//	}
+//	else {
+		if(picker == nil)
+			picker = [[PickerViewController alloc] initWithNibName:@"PickerView" bundle:nil];
+//	if(addNavigationController == nil)
+		addNavigationController = [[UINavigationController alloc] initWithRootViewController:picker];
+	Users *userObj = [appDelegate.usersArray objectAtIndex:indexPath.row];
 	[userObj hydrateDetailViewData];
-	
-	dvController.userObj = userObj;
-	
-	[self.navigationController pushViewController:dvController animated:YES];
-	}
-	else {
-		
-	
-	
-	}
+	picker.username = userObj.userName;
+	picker.password = userObj.password;
+	[self.navigationController presentModalViewController:addNavigationController animated:YES];		
+//	}
 }
+
+//кнопка LogIn
+- (void)button:(id)sender {
+   // tableViewController *controller = self.tableController;
+  //  controller.record = [[[Record alloc] init] autorelease];
+   // [[self navigationController] pushViewController:controller animated:YES];
+}
+
+
 
 
 - (void)viewDidLoad {

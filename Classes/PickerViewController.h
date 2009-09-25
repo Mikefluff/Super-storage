@@ -12,12 +12,16 @@
 #define kAccelerationThreshold		2.2
 #define kUpdateInterval				(1.0f/10.0f)
 
+@class tableViewController, tableDataDelegate;
+
 @interface PickerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIAccelerometerDelegate, UIActionSheetDelegate>
 {
 	UIPickerView	*picker;
 	UIButton		*spinButton;
 	IBOutlet UILabel *mlabel6;
-	
+	tableViewController *tableView;
+	NSString		*username;
+	NSString		*password;
 	
 	NSMutableArray *code;
 	NSMutableString *secret;
@@ -75,6 +79,9 @@
 @property (nonatomic, retain) NSArray *component5BlurredLabels;
 @property (nonatomic, retain) NSArray *component6BlurredLabels;
 @property (nonatomic, retain) NSMutableString *secret;
+@property (nonatomic, retain) NSString *username;
+@property (nonatomic, retain) NSString *password;
+
 - (IBAction)spin;
 - (NSArray *)blurredLabelArrayFromLabelArray:(NSArray *)labelArray;
 - (NSArray *)labelArrayFromStringArray:(NSArray *)stringArray;

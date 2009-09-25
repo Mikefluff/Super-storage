@@ -10,6 +10,7 @@
 #import "Users.h"
 #import "PickerViewController.h"
 #import "md5.h"
+#import "tableDataDelegate.h"
 
 @implementation AddViewController
 
@@ -24,9 +25,7 @@
 											  initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
 											   target:self action:@selector(cancel_Clicked:)] autorelease];
 	
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] 
-											   initWithBarButtonSystemItem:UIBarButtonSystemItemSave 
-											   target:self action:@selector(save_Clicked:)] autorelease];
+	self.navigationItem.rightBarButtonItem = nil;
 	
 	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	
@@ -48,7 +47,9 @@
 	//Make the coffe name textfield to be the first responder.
 	[txtUserName becomeFirstResponder];
 }
-
+-(void)viewWillDisappear:(BOOL)animated {
+[picker.view removeFromSuperview];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
@@ -68,6 +69,10 @@
 	Users *userObj = [[Users alloc] initWithPrimaryKey:0];
 	userObj.userName = txtUserName.text;
 	userObj.password = [picker.secret md5sum];
+	tableDataDelegate *tabledata = [tableDataDelegate alloc];
+	tabledata.db = txtUserName.text;
+	tabledata.hash = [picker.secret md5sum];
+	[tabledata createEditableCopyOfDatabaseIfNeeded];
 	userObj.isDirty = NO;
 	userObj.isDetailViewHydrated = YES;
 	
@@ -75,14 +80,15 @@
 	[appDelegate addUser:userObj];
 	
 	//Dismiss the controller.
-	[picker.view removeFromSuperview];
+	
  	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (void) cancel_Clicked:(id)sender {
 	
 	//Dismiss the controller.
-	[self.navigationController dismissModalViewControllerAnimated:YES];
+	[picker.view removeFromSuperview];
+ 	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
@@ -95,7 +101,7 @@
 }
 -(void) showPicker:(id)sender {
 		// Add the picker
-	if (txtUserName.text.length != nil)
+	if (txtUserName.text.length != 0)
 	{
 	[txtUserName resignFirstResponder];
 	if(picker == nil)
@@ -105,10 +111,14 @@
 	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
 	[self.view addSubview:picker.view];
 	[UIView commitAnimations];
+	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] 
+		  initWithBarButtonSystemItem:UIBarButtonSystemItemSave 
+		  target:self action:@selector(save_Clicked:)] autorelease];
 	}
 	else {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Enter Username!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok",nil];
 		[alert show];
+		[alert release];
 	}
 		
 	

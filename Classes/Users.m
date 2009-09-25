@@ -7,6 +7,8 @@
 //
 
 #import "Users.h"
+#import <sqlite3.h>
+#import "md5.h"
 
 static sqlite3 *database = nil;
 static sqlite3_stmt *deleteStmt = nil;
@@ -24,7 +26,10 @@ static sqlite3_stmt *updateStmt = nil;
 	Super_storageAppDelegate *appDelegate = (Super_storageAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
-		
+		NSString *hash = [[NSString alloc] initWithString:@"PRAGMA KEY = '"];
+		UIDevice *myDevice = [UIDevice currentDevice];
+		hash = [[hash stringByAppendingString:[[myDevice uniqueIdentifier] md5sum]] stringByAppendingString:@"'"];
+		sqlite3_exec(database, [hash UTF8String], NULL, NULL, NULL);
 		const char *sql = "select userID, username from Users";
 		sqlite3_stmt *selectstmt;
 		if(sqlite3_prepare_v2(database, sql, -1, &selectstmt, NULL) == SQLITE_OK) {
@@ -115,11 +120,10 @@ static sqlite3_stmt *updateStmt = nil;
 	if(SQLITE_DONE != sqlite3_step(detailStmt)) {
 		
 		//Get the price in a temporary variable.
-		NSString *passwordDN = [[NSString alloc] initWithString:sqlite3_column_text(detailStmt, 0)];
+	//	NSString *passwordDN = [[NSString alloc] initWithString:sqlite3_column_text(detailStmt, 0)];
 		
 		//Assign the price. The price value will be copied, since the property is declared with "copy" attribute.
-		self.password = passwordDN;
-		
+		self.password = [NSString stringWithUTF8String:(char *)sqlite3_column_text(detailStmt, 0)];		
 		NSData *data = [[NSData alloc] initWithBytes:sqlite3_column_blob(detailStmt, 1) length:sqlite3_column_bytes(detailStmt, 1)]; 
 		
 		if(data == nil)
@@ -128,7 +132,7 @@ static sqlite3_stmt *updateStmt = nil;
 			self.userImage = [UIImage imageWithData:data]; 
 		
 		//Release the temporary variable. Since we created it using alloc, we have own it.
-		[passwordDN release];
+		
 	}
 	else
 		NSAssert1(0, @"Error while getting the price of coffee. '%s'", sqlite3_errmsg(database));

@@ -12,9 +12,13 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		4932E655106A73C8005C23A5 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4932E648106A736F005C23A5 /* libcrypto.a */; };
+		4932E656106A73CE005C23A5 /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4932E64E106A7376005C23A5 /* libsqlcipher.a */; };
+		4932EC8E106BAD42005C23A5 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4932EC8D106BAD42005C23A5 /* OverlayView.xib */; };
 		49A53A0B10624A2200774C6A /* UIImage-Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A53A0A10624A2200774C6A /* UIImage-Blur.m */; };
 		49A53A0E10624AF800774C6A /* UIView-GetImageOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A53A0D10624AF800774C6A /* UIView-GetImageOf.m */; };
 		49A53AB21062667900774C6A /* JLPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A53AB11062667900774C6A /* JLPickerView.m */; };
+		49A541F61069031300774C6A /* txtEdit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A541F51069031300774C6A /* txtEdit.xib */; };
 		49CE44F4105E42B00001F1F6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE44F3105E42B00001F1F6 /* MainWindow.xib */; };
 		49CE44FA105E42F20001F1F6 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE44F9105E42F20001F1F6 /* RootViewController.xib */; };
 		49CE44FD105E43030001F1F6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE44FC105E43030001F1F6 /* RootViewController.m */; };
@@ -32,39 +36,39 @@
 		49CE47E0105FB2D30001F1F6 /* md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE47DF105FB2D30001F1F6 /* md5.m */; };
 		49CE47E3105FB5C40001F1F6 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE47E1105FB5C40001F1F6 /* PickerViewController.m */; };
 		49CE47E5105FB5E60001F1F6 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CE47E4105FB5E60001F1F6 /* PickerView.xib */; };
-		49CE4836105FBCFC0001F1F6 /* txtEditAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE4835105FBCFC0001F1F6 /* txtEditAppDelegate.m */; };
+		49CE4836105FBCFC0001F1F6 /* tableDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE4835105FBCFC0001F1F6 /* tableDataDelegate.m */; };
 		49CE4839105FBD080001F1F6 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE4838105FBD080001F1F6 /* Record.m */; };
 		49CE483D105FBD210001F1F6 /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CE483B105FBD200001F1F6 /* OverlayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		49CE45B6105E70480001F1F6 /* PBXContainerItemProxy */ = {
+		4932E647106A736F005C23A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 49CE45B1105E70480001F1F6 /* openssl.xcodeproj */;
+			containerPortal = 4932E58C106A7346005C23A5 /* openssl.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9069D28C0FCE659A0042E34C;
 			remoteInfo = crypto;
 		};
-		49CE45BD105E70500001F1F6 /* PBXContainerItemProxy */ = {
+		4932E64D106A7376005C23A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */;
+			containerPortal = 4932E63C106A735D005C23A5 /* sqlcipher.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC046055464E500DB518D;
 			remoteInfo = sqlcipher;
 		};
-		49CE45E8105F8F5E0001F1F6 /* PBXContainerItemProxy */ = {
+		4932E651106A738D005C23A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D;
-			remoteInfo = sqlcipher;
-		};
-		49CE45EA105F8F620001F1F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 49CE45B1105E70480001F1F6 /* openssl.xcodeproj */;
+			containerPortal = 4932E58C106A7346005C23A5 /* openssl.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9069D28B0FCE659A0042E34C;
 			remoteInfo = crypto;
+		};
+		4932E653106A7390005C23A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4932E63C106A735D005C23A5 /* sqlcipher.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = sqlcipher;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -77,12 +81,16 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Super_storage_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Super_storage_Prefix.pch; sourceTree = "<group>"; };
+		4932E58C106A7346005C23A5 /* openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = openssl.xcodeproj; sourceTree = OPENSSL_SRC; };
+		4932E63C106A735D005C23A5 /* sqlcipher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = sqlcipher.xcodeproj; sourceTree = SQLCIPHER_SRC; };
+		4932EC8D106BAD42005C23A5 /* OverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		49A53A0910624A2200774C6A /* UIImage-Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Blur.h"; sourceTree = "<group>"; };
 		49A53A0A10624A2200774C6A /* UIImage-Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Blur.m"; sourceTree = "<group>"; };
 		49A53A0C10624AF800774C6A /* UIView-GetImageOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-GetImageOf.h"; sourceTree = "<group>"; };
 		49A53A0D10624AF800774C6A /* UIView-GetImageOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-GetImageOf.m"; sourceTree = "<group>"; };
 		49A53AB01062667900774C6A /* JLPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPickerView.h; sourceTree = "<group>"; };
 		49A53AB11062667900774C6A /* JLPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPickerView.m; sourceTree = "<group>"; };
+		49A541F51069031300774C6A /* txtEdit.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = txtEdit.xib; sourceTree = "<group>"; };
 		49CE44F3105E42B00001F1F6 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		49CE44F9105E42F20001F1F6 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		49CE44FB105E43030001F1F6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -98,8 +106,6 @@
 		49CE459A105E6CAC0001F1F6 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		49CE45A3105E6D530001F1F6 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		49CE45A4105E6D530001F1F6 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
-		49CE45B1105E70480001F1F6 /* openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openssl.xcodeproj; path = "../../openssl-0.9.8k/openssl.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlcipher.xcodeproj; path = ../../SQLCipher/sqlcipher/sqlcipher.xcodeproj; sourceTree = SOURCE_ROOT; };
 		49CE468F105F91080001F1F6 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		49CE47D6105FB17B0001F1F6 /* tableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tableView.xib; sourceTree = "<group>"; };
 		49CE47D8105FB1840001F1F6 /* tableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableViewController.h; sourceTree = "<group>"; };
@@ -111,8 +117,8 @@
 		49CE47E1105FB5C40001F1F6 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		49CE47E2105FB5C40001F1F6 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		49CE47E4105FB5E60001F1F6 /* PickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
-		49CE4834105FBCFC0001F1F6 /* txtEditAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = txtEditAppDelegate.h; sourceTree = "<group>"; };
-		49CE4835105FBCFC0001F1F6 /* txtEditAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = txtEditAppDelegate.m; sourceTree = "<group>"; };
+		49CE4834105FBCFC0001F1F6 /* tableDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableDataDelegate.h; sourceTree = "<group>"; };
+		49CE4835105FBCFC0001F1F6 /* tableDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableDataDelegate.m; sourceTree = "<group>"; };
 		49CE4837105FBD070001F1F6 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		49CE4838105FBD080001F1F6 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		49CE483B105FBD200001F1F6 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
@@ -125,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4932E655106A73C8005C23A5 /* libcrypto.a in Frameworks */,
+				4932E656106A73CE005C23A5 /* libsqlcipher.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -148,8 +156,8 @@
 				49CE483C105FBD210001F1F6 /* OverlayViewController.h */,
 				49CE4837105FBD070001F1F6 /* Record.h */,
 				49CE4838105FBD080001F1F6 /* Record.m */,
-				49CE4834105FBCFC0001F1F6 /* txtEditAppDelegate.h */,
-				49CE4835105FBCFC0001F1F6 /* txtEditAppDelegate.m */,
+				49CE4834105FBCFC0001F1F6 /* tableDataDelegate.h */,
+				49CE4835105FBCFC0001F1F6 /* tableDataDelegate.m */,
 				49CE47E1105FB5C40001F1F6 /* PickerViewController.m */,
 				49CE47E2105FB5C40001F1F6 /* PickerViewController.h */,
 				49CE47DE105FB2D30001F1F6 /* md5.h */,
@@ -185,6 +193,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4932E58C106A7346005C23A5 /* openssl.xcodeproj */,
+				4932E63C106A735D005C23A5 /* sqlcipher.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -206,11 +216,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4932EC8D106BAD42005C23A5 /* OverlayView.xib */,
+				49A541F51069031300774C6A /* txtEdit.xib */,
 				49CE47E4105FB5E60001F1F6 /* PickerView.xib */,
 				49CE47D6105FB17B0001F1F6 /* tableView.xib */,
 				49CE468F105F91080001F1F6 /* DetailView.xib */,
-				49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */,
-				49CE45B1105E70480001F1F6 /* openssl.xcodeproj */,
 				49CE4525105E61810001F1F6 /* EditView.xib */,
 				49CE4523105E61790001F1F6 /* AddView.xib */,
 				49CE44F9105E42F20001F1F6 /* RootViewController.xib */,
@@ -231,18 +241,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		49CE45B2105E70480001F1F6 /* Products */ = {
+		4932E643106A736F005C23A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49CE45B7105E70480001F1F6 /* libcrypto.a */,
+				4932E648106A736F005C23A5 /* libcrypto.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		49CE45B9105E70500001F1F6 /* Products */ = {
+		4932E649106A7376005C23A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49CE45BE105E70500001F1F6 /* libsqlcipher.a */,
+				4932E64E106A7376005C23A5 /* libsqlcipher.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,8 +271,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				49CE45EB105F8F620001F1F6 /* PBXTargetDependency */,
-				49CE45E9105F8F5E0001F1F6 /* PBXTargetDependency */,
+				4932E652106A738D005C23A5 /* PBXTargetDependency */,
+				4932E654106A7390005C23A5 /* PBXTargetDependency */,
 			);
 			name = "Super-storage";
 			productName = "Super-storage";
@@ -281,12 +291,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 49CE45B2105E70480001F1F6 /* Products */;
-					ProjectRef = 49CE45B1105E70480001F1F6 /* openssl.xcodeproj */;
+					ProductGroup = 4932E643106A736F005C23A5 /* Products */;
+					ProjectRef = 4932E58C106A7346005C23A5 /* openssl.xcodeproj */;
 				},
 				{
-					ProductGroup = 49CE45B9105E70500001F1F6 /* Products */;
-					ProjectRef = 49CE45B8105E70500001F1F6 /* sqlcipher.xcodeproj */;
+					ProductGroup = 4932E649106A7376005C23A5 /* Products */;
+					ProjectRef = 4932E63C106A735D005C23A5 /* sqlcipher.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -297,18 +307,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		49CE45B7105E70480001F1F6 /* libcrypto.a */ = {
+		4932E648106A736F005C23A5 /* libcrypto.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libcrypto.a;
-			remoteRef = 49CE45B6105E70480001F1F6 /* PBXContainerItemProxy */;
+			remoteRef = 4932E647106A736F005C23A5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		49CE45BE105E70500001F1F6 /* libsqlcipher.a */ = {
+		4932E64E106A7376005C23A5 /* libsqlcipher.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libsqlcipher.a;
-			remoteRef = 49CE45BD105E70500001F1F6 /* PBXContainerItemProxy */;
+			remoteRef = 4932E64D106A7376005C23A5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -325,6 +335,8 @@
 				49CE4690105F91080001F1F6 /* DetailView.xib in Resources */,
 				49CE47D7105FB17B0001F1F6 /* tableView.xib in Resources */,
 				49CE47E5105FB5E60001F1F6 /* PickerView.xib in Resources */,
+				49A541F61069031300774C6A /* txtEdit.xib in Resources */,
+				4932EC8E106BAD42005C23A5 /* OverlayView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +358,7 @@
 				49CE47DD105FB2BB0001F1F6 /* txtEditViewController.m in Sources */,
 				49CE47E0105FB2D30001F1F6 /* md5.m in Sources */,
 				49CE47E3105FB5C40001F1F6 /* PickerViewController.m in Sources */,
-				49CE4836105FBCFC0001F1F6 /* txtEditAppDelegate.m in Sources */,
+				49CE4836105FBCFC0001F1F6 /* tableDataDelegate.m in Sources */,
 				49CE4839105FBD080001F1F6 /* Record.m in Sources */,
 				49CE483D105FBD210001F1F6 /* OverlayViewController.m in Sources */,
 				49A53A0B10624A2200774C6A /* UIImage-Blur.m in Sources */,
@@ -358,15 +370,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		49CE45E9105F8F5E0001F1F6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = sqlcipher;
-			targetProxy = 49CE45E8105F8F5E0001F1F6 /* PBXContainerItemProxy */;
-		};
-		49CE45EB105F8F620001F1F6 /* PBXTargetDependency */ = {
+		4932E652106A738D005C23A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = crypto;
-			targetProxy = 49CE45EA105F8F620001F1F6 /* PBXContainerItemProxy */;
+			targetProxy = 4932E651106A738D005C23A5 /* PBXContainerItemProxy */;
+		};
+		4932E654106A7390005C23A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sqlcipher;
+			targetProxy = 4932E653106A7390005C23A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -380,6 +392,10 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Super_storage_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(SQLCIPHER_SRC)/**",
+					"$(OPENSSL_SRC)/**",
+				);
 				INFOPLIST_FILE = "Super_storage-Info.plist";
 				PRODUCT_NAME = "Super-storage";
 			};

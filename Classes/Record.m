@@ -7,13 +7,17 @@
 //
 
 #import "Record.h"
+#import "tableDataDelegate.h"
+#import <sqlite3.h>
+
 
 #define TITLE_LENGTH 50
 
 @implementation Record
 
-@synthesize primaryKey, title, txt, username, password, image;
+@synthesize primaryKey, title, txt, image, isDirty, isDetailViewHydrated;
 
+static sqlite3 *database = nil;
 static sqlite3_stmt *init_statement = nil;
 static sqlite3_stmt *read_statement = nil;
 static sqlite3_stmt *update_statement = nil;
@@ -28,8 +32,49 @@ static sqlite3_stmt *delete_statement = nil;
 	if (delete_statement) sqlite3_finalize(delete_statement);
 }
 
+
 // Инициализирует запись и читает для нее заголовок из базы
--(id)initWithIdentifier:(NSInteger)idKey database:(sqlite3 *)db {
++ (void) getInitialDataToDisplay:(NSString *)dbPath hash:(NSString *)hash {
+	
+	Super_storageAppDelegate *appDelegate = (Super_storageAppDelegate *)[[UIApplication sharedApplication] delegate];
+
+	
+	if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK) {
+		NSString *ha = [[NSString alloc] initWithString:@"PRAGMA KEY = '"];
+		ha = [[ha stringByAppendingString:hash] stringByAppendingString:@"'"];
+		sqlite3_exec(database, [ha UTF8String], NULL, NULL, NULL);
+		
+		const char *sql = "select id, title from data";
+		sqlite3_stmt *selectstmt;
+		if(sqlite3_prepare_v2(database, sql, -1, &selectstmt, NULL) == SQLITE_OK) {
+			
+			while(sqlite3_step(selectstmt) == SQLITE_ROW) {
+				
+				NSInteger primaryKey = sqlite3_column_int(selectstmt, 0);
+				Record *record = [[Record alloc] initWithPrimaryKey:primaryKey];
+				record.title = [NSString stringWithUTF8String:(char *)sqlite3_column_text(selectstmt, 1)];
+				
+				record.isDirty = NO;
+				
+				[appDelegate.records addObject:record];
+				[record release];
+			}
+		}
+	}
+	else
+		sqlite3_close(database); //Even though the open call failed, close the database connection to release all the memory.
+}
+- (id) initWithPrimaryKey:(NSInteger) pk {
+	
+	[super init];
+	primaryKey = pk;
+	
+	image = [[UIImage alloc] init];
+	isDetailViewHydrated = NO;
+	
+	return self;
+}
+/*-(id)initWithIdentifier:(NSInteger)idKey database:(sqlite3 *)db {
     if (self = [super init]) {
         database = db;
         primaryKey = idKey;
@@ -38,13 +83,8 @@ static sqlite3_stmt *delete_statement = nil;
         if (init_statement == nil) {
             // Подготавливаем запрос перед отправкой в базу данных
             const char *sql;
-			if (type = 0) 
-				sql = "SELECT username FROM system WHERE id=?";
-            else {
-				sql = "SELECT title FROM records WHERE id=?";
-			}
-
-			if (sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK) {
+				sql = "SELECT title FROM data WHERE id=?";
+            if (sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK) {
                 NSAssert1(NO, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
             }
         }
@@ -63,17 +103,14 @@ static sqlite3_stmt *delete_statement = nil;
         sqlite3_reset(init_statement);
     }
     return self;
-}
+}*/
 
 // Читает полный текст записи из базы
 -(void)readRecord {
     if (read_statement == nil) {
         const char *sql;
-		if (type) {
-		sql = "SELECT username, password, image FROM system WHERE id=?"; }
-		else {
-		sql = "SELECT title, txt, image FROM records WHERE id=?"; }
-        if (sqlite3_prepare_v2(database, sql, -1, &read_statement, NULL) != SQLITE_OK) {
+		sql = "SELECT title, text, image FROM data WHERE id=?";
+		if (sqlite3_prepare_v2(database, sql, -1, &read_statement, NULL) != SQLITE_OK) {
             NSAssert1(NO, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
         }
     }
@@ -102,11 +139,9 @@ static sqlite3_stmt *delete_statement = nil;
     
     if (update_statement == nil) {
 		const char *sql;
-		if (type) {
-		sql = "UPDATE system SET username=?, password=?, image=? WHERE id=?"; }
-		else {
-		sql = "UPDATE records SET title=?, txt=?, image=? WHERE id=?";	}
-        if (sqlite3_prepare_v2(database, sql, -1, &update_statement, NULL) != SQLITE_OK) {
+	
+		sql = "UPDATE data SET title=?, text=?, image=? WHERE id=?"; 
+	    if (sqlite3_prepare_v2(database, sql, -1, &update_statement, NULL) != SQLITE_OK) {
             NSAssert1(NO, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
         }
     }
@@ -133,19 +168,14 @@ static sqlite3_stmt *delete_statement = nil;
 }
 
 // Добавляет новую запись в базу
--(void)insertIntoDatabase:(sqlite3 *)db {
-    database = db;
+-(void)insertIntoDatabase {
     
     // Если пользователь ничего не ввел, то запись в базу не производится
     if ((self.txt == nil) || (txt.length == 0)) return;
     
     if (insert_statement == nil) {
 		const char *sql;
-		if(type)
-			sql = "INSERT INTO system(username, password, image) VALUES(?, ?, ?)";
-		else
-			sql = "INSERT INTO records(title, txt, image) VALUES(?, ?, ?)";
-
+				sql = "INSERT INTO data(title, text, image) VALUES(?, ?, ?)";
         if (sqlite3_prepare_v2(database, sql, -1, &insert_statement, NULL) != SQLITE_OK) {
             NSAssert1(NO, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
         }
@@ -175,10 +205,7 @@ static sqlite3_stmt *delete_statement = nil;
 -(void)deleteRecord {
 	if (delete_statement == nil) {
 		const char *sql;	
-		if (type)
-			sql = "DELETE FROM system WHERE id=?";
-		else
-			sql = "DELETE FROM records WHERE id=?";
+			sql = "DELETE FROM data WHERE id=?";
         if (sqlite3_prepare_v2(database, sql, -1, &delete_statement, NULL) != SQLITE_OK) {
             NSAssert1(NO, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
         }

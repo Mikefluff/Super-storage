@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class Users, PickerViewController;
+@class Users, PickerViewController, tableDataDelegate;
 
 @interface AddViewController : UIViewController {
 

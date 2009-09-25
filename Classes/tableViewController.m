@@ -8,7 +8,7 @@
 
 #import "tableViewController.h"
 #import "txtEditViewController.h"
-#import "txtEditAppDelegate.h"
+#import "tableDataDelegate.h"
 #import "Record.h"
 #import "OverlayViewController.h"
 
@@ -78,7 +78,7 @@
 // Вызывает появление окна создания нового документа
 - (void)button:(id)sender {
     txtEditViewController *controller = self.txtViewController;
-    controller.record = [[[Record alloc] init] autorelease];
+    controller.record = [[Record alloc] initWithPrimaryKey:0];
     [[self navigationController] pushViewController:controller animated:YES];
 }
 
@@ -101,7 +101,8 @@
 		UILabel *lblTemp2 = (UILabel *)[cell viewWithTag:2];
 		UIImageView *image = (UIImageView *)[cell viewWithTag:3];
     // Получаем ссылку на делегат класса UIApplication и доступ к его переменным
-    txtEditAppDelegate *appDelegate = (txtEditAppDelegate *)[[UIApplication sharedApplication] delegate];
+		Super_storageAppDelegate *appDelegate = (Super_storageAppDelegate *)[[UIApplication sharedApplication] delegate];
+
     Record *record = (Record *)[appDelegate.records objectAtIndex:indexPath.row];
     
    // cell.text
@@ -124,7 +125,8 @@
 //		return;
 //	else
 //	{
-	txtEditAppDelegate *appDelegate = (txtEditAppDelegate *)[[UIApplication sharedApplication] delegate];
+	Super_storageAppDelegate *appDelegate = (Super_storageAppDelegate *)[[UIApplication sharedApplication] delegate];
+
     txtEditViewController *controller = self.txtViewController;
     
     Record *record = (Record *)[appDelegate.records objectAtIndex:indexPath.row];
@@ -140,7 +142,8 @@
 - (void)tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
-     txtEditAppDelegate *appDelegate = (txtEditAppDelegate *)[[UIApplication sharedApplication] delegate];
+    Super_storageAppDelegate *appDelegate = (Super_storageAppDelegate *)[[UIApplication sharedApplication] delegate];
+
 		if (editingStyle == UITableViewCellEditingStyleDelete) {
  //       [listView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
 //						withRowAnimation:UITableViewRowAnimationFade];
@@ -167,12 +170,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 // Возвращает число строк для указанной секции
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if (searching)
-		return [copylistOfItems count];
-	else {
-		txtEditAppDelegate *appDelegate = (txtEditAppDelegate *)[[UIApplication sharedApplication] delegate];
+//	if (searching)
+//		return [copylistOfItems count];
+//	else {
+	Super_storageAppDelegate *appDelegate = (Super_storageAppDelegate *)[[UIApplication sharedApplication] delegate];
+
     return [appDelegate.records count];
-	}
+//	}
 }
 
 - (NSIndexPath *)tableView :(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -341,7 +345,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void) searchTableView {
-	txtEditAppDelegate *appDelegate = (txtEditAppDelegate *)[[UIApplication sharedApplication] delegate];
+	Super_storageAppDelegate *appDelegate = (Super_storageAppDelegate *)[[UIApplication sharedApplication] delegate];
 
 	NSMutableArray *searchArray = [appDelegate.records copy];	
 	    

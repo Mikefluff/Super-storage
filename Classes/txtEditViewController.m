@@ -8,7 +8,7 @@
 
 #import "txtEditViewController.h"
 #import "tableViewController.h"
-#import "txtEditAppDelegate.h"
+#import "tableDataDelegate.h"
 #import "Record.h"
 
 @implementation txtEditViewController
@@ -43,10 +43,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
- 	UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-																			target:self
-																			action:@selector(button:)];
-    self.navigationItem.leftBarButtonItem = button;
+ 	
 	txtView.text = record.txt;
 	editMode = NO;
 	imagePickerView = [[UIImagePickerController alloc] init];
@@ -58,6 +55,9 @@
     
 	    
 	[self doneAction:self];
+	record.txt = txtView.text;
+    tableDataDelegate *appDelegate = [tableDataDelegate alloc];
+	[appDelegate updateOrAddRecordIntoDatabase:self.record];
 }
 
 // Убирает фокус ввода с поля TextView и удаляет кнопку завершения редактирования с NavigationBar
@@ -80,13 +80,7 @@ if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceT
 	[imagePickerView dismissModalViewControllerAnimated:YES];
 	
 }
-- (void)button:(id)sender {
-	record.txt = txtView.text;
-    txtEditAppDelegate *appDelegate = (txtEditAppDelegate *)[[UIApplication sharedApplication] delegate];
-	[appDelegate updateOrAddRecordIntoDatabase:self.record];
-	tableViewController *controller = self.main;
-	[[self navigationController] pushViewController:controller animated:YES];
-}
+
 
 
 -(void)dealloc {
